@@ -17,3 +17,18 @@ window.addEventListener('scroll', function() {
     }
 
 });
+
+let pictures = document.querySelectorAll(".photo");
+
+for( let i = 0; i < pictures.length; i++){
+	pictures[i].addEventListener('click', () =>{
+        console.log(pictures[i].children[0])
+
+		if(!document.fullscreenElement){
+			pictures[i].children[0].requestFullscreen()
+		}
+		else{
+			document.exitFullscreen();
+		}
+	})
+}

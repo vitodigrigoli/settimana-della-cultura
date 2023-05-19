@@ -42,7 +42,7 @@ BBE5E6 -> Powder Blue
 *::after{ margin: 0; padding: 0; box-sizing: border-box;}
 
 html{scroll-behavior: smooth; overflow-x: hidden; width: 100vw; background: var(--dark-blue); }
-body{font-family: 'Prompt', sans-serif; color: white; width: 100vw; background: var(--dark-blue); overflow-x: hidden; background: url('/assets/img/topographie.svg') ; background-repeat: repeat; background-size: contain; }
+body{font-family: 'Prompt', sans-serif; color: white; width: 100vw; background: var(--dark-blue); overflow-x: hidden; background: url('./assets/img/topographie.svg') ; background-repeat: repeat; background-size: contain; }
 h1, h2, h3, h4{font-family: 'Impact', serif; text-transform: uppercase; font-weight: 400; letter-spacing: 1px;}
 p{margin-block-end: 1em; line-height: 2;}
 a{text-decoration: none; cursor: pointer; color: var(--glaucus);  transition: 0.4s;}
@@ -345,8 +345,8 @@ button{max-width: fit-content;}
 
 .contact__text{text-shadow: 2px 2px 7px black; width: 40%; color: white; display: flex; align-items: center}
 
-.contact__form{ border: 1px solid rgba(255, 255, 255, 0.4); border-bottom: 1px solid rgba(255, 255, 255, 0.2); border-right: 1px solid rgba(255, 255, 255, 0.2); width: 50%; border-radius: 20px;background: rgba(255, 255, 255, 0.2); padding: 5vh; text-align: center; box-shadow: 20px 20px 20px rgb(4 7 37 / 30%); }
-.contact__form__input{ border: none;  border-radius: 20px; width: 100%; font-size: 18px; margin: 2vh 0; outline: none; padding: 20px; font-family: 'Prompt', sans-serif; }
+.contact__form{ border: 1px solid rgba(255, 255, 255, 0.4); border-bottom: 1px solid rgba(255, 255, 255, 0.2); border-right: 1px solid rgba(255, 255, 255, 0.2); width: 50%; border-radius: 20px;background: rgba(255, 255, 255, 0.2); padding: 2rem; text-align: center; box-shadow: 20px 20px 20px rgb(4 7 37 / 30%); }
+.contact__form__input{ border: none;  border-radius: 20px; width: 100%; font-size: 18px; margin: 2vh 0; outline: none; padding: 1rem; font-family: 'Prompt', sans-serif; }
 .contact__form #hp{display: none;}
 
 @media (max-width: 1024px) {

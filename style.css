@@ -445,13 +445,13 @@ button{max-width: fit-content;}
 .timeline::after{filter: blur(10px); width: 15px; left: -5px;;}
 
 .timeline__title{margin-left: 10%; margin-bottom: 5rem;}
-.timeline__card{ transition: 0.4s; margin: 0 0 15vh 10%; border: 1px solid rgba(255, 255, 255, 0.4); border-bottom: 1px solid rgba(255, 255, 255, 0.2); border-right: 1px solid rgba(255, 255, 255, 0.2); background-color:rgba(255, 255, 255, 0.4);  padding: 2rem; border-radius: 2rem; background-color: rgba(255, 255, 255, 0.1);}
-.timeline__card:hover{background: rgba(255, 255, 255, 0.2); }
+.timeline__card{ transition: 0.4s; margin: 0 0 15vh 10%; border: 1px solid rgba(255, 255, 255, 0.4); border-bottom: 1px solid rgba(255, 255, 255, 0.2); border-right: 1px solid rgba(255, 255, 255, 0.2); background-color:rgba(255, 255, 255, 0.4);  padding: 50px; border-radius: 2rem; background-color: rgba(255, 255, 255, 0.1);}
+.timeline__card:hover{transform: scale(1.05); backdrop-filter: blur(30px);  }
 .timeline__card__header{display: flex; align-items: center; flex-wrap: wrap; gap: 1rem;}
 .timeline__card__header__time{  background: rgba(255, 255, 255, 0.2); padding: 0.5rem 1rem; border-radius: 10px;  }
 .timeline__card__header__time i{ margin-right: 0.5rem;}
 
-.timeline__card__text{margin: 2rem 0;}
+.timeline__card__text p {margin-block-end: 0;}
 
 .timeline__card__media{display: flex;}
 .timeline__card__media__item{ width: 8rem; border-radius: 10px; margin-right: 2rem; text-align: center;}
@@ -461,9 +461,11 @@ button{max-width: fit-content;}
 @media (max-width:768px) {
 	.programmation .cursor{display: unset;}		
 	.timeline{width: 100%;}
+	.timeline__card{   padding: 30px; }
 
 	.programmation__tabs{flex-wrap: nowrap; -webkit-overflow-scrolling: touch; overflow-x: auto; justify-content: flex-start; gap: 1rem;}
 	.programmation__tabs .tab { flex: 0 0 auto;}
+	.timeline__card__text{font-size: 14px;}
 }
 
 

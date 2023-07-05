@@ -340,6 +340,8 @@ button{max-width: fit-content;}
 .feed-item{border-radius: 20px !important;}
 .feed-item[data-source="juicer"]{ display: none !important;}
 
+.juicer-feed .j-paginate {color: white !important; border: 2px solid white !important; }
+.juicer-feed .j-paginate:hover{background-color: white !important; color: var(--dark-blue) !important}
 
 /* Form
 ------------------------------------------------------------------------- */

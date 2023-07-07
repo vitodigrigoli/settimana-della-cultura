@@ -434,7 +434,7 @@ button{max-width: fit-content;}
 ------------------------------------------------------------------------- */	
 .programmation .cursor{display: none;}
 
-.programmation__tabs{display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 1rem;}
+.programmation__tabs{display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 1rem; width: 75%;}
 .programmation__tabs .tab{ background: rgba(255, 255, 255, 0.2); padding: 1rem 1.5rem; border-radius: 10px; cursor: pointer; transition: 0.4s; cursor: pointer;}
 .programmation__tabs .tab:hover{background: rgba(255, 255, 255, 0.4); ;}
 .programmation__tabs .tab--active{background: rgba(255, 255, 255, 0.8) !important; color: var(--dark-blue); }
@@ -468,7 +468,7 @@ button{max-width: fit-content;}
 	.timeline{width: 100%;}
 	.timeline__card{   padding: 30px; }
 
-	.programmation__tabs{flex-wrap: nowrap; -webkit-overflow-scrolling: touch; overflow-x: auto; justify-content: flex-start; gap: 1rem;}
+	.programmation__tabs{flex-wrap: nowrap; -webkit-overflow-scrolling: touch; overflow-x: auto; justify-content: flex-start; gap: 1rem; width: 100%;}
 	.programmation__tabs .tab { flex: 0 0 auto;}
 	.timeline__card__text{font-size: 14px;}
 }

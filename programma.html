@@ -152,7 +152,7 @@
 
 	<!-- Programmation -->
 	<div class="programmation container">
-		<div class="programmation__tabs">
+		<div class="programmation__tabs" id="tabs">
 			
 			<div class="tab tab--active" id="tab-21" aria-selected="true" aria-label="programmation-21">
 				21 Luglio
@@ -205,7 +205,7 @@
 
 		<div class="programmation__content" >
 
-			<div class="programmation__content__timetable programmation__content__timetable--active" id="programmation-21">
+			<!--div class="programmation__content__timetable programmation__content__timetable--active" id="programmation-21">
 				<h2 class="text-1 programmation__content__timetable__title">Programma del 21 Luglio</h2>
 
 				<div class="timeline" >
@@ -1386,7 +1386,9 @@
 			</div>
 
 
-		</div>
+		</div-->
+	
+		
 	</div>
 
 	<!-- Activities >
@@ -1460,6 +1462,75 @@
 
 
 <script>
+	const url = './programma-2023.tsv'
+	fetch(url)
+		.then(response => response.text())
+		.then(data => {
+			let csvData = tsvToObjects(data);
+			let groupedData = groupBy(csvData, 'giorno');
+			let html = '';
+			let flag = 0;
+			
+			for(let date in groupedData) {
+				html += `<div class="programmation__content__timetable ${ flag === 0 ? 'programmation__content__timetable--active' : ''}" id="programmation-${date}">
+							<h2 class="text-1 programmation__content__timetable__title">Programma del ${date} Luglio</h2>
+							<div class="timeline" >`;
+
+					for(let row of groupedData[date]) {
+					html += `
+					<div class="timeline__card">
+						<div class="timeline__card__header">
+							<div class="timeline__card__header__time">
+								<i class="fa-solid fa-clock"></i>${row.orario}
+							</div>
+
+							<div class="timeline__card__header__time">
+								<i class="fa-solid fa-map-location-dot"></i>${row.luogo}
+							</div>
+
+						</div>
+		
+						<div class="timeline__card__text">
+							<span class="subtitle text-3 color-3">${row.categoria}</span>
+							<h2 class="text-2">${row.titolo}</h2>
+							<p>${row.descrizione}</p>
+						</div>
+		
+					</div>
+					`;
+				}
+				html += '</div><a class="button button--light center" href="#tabs">Torna su <i class="fa-solid fa-arrow-turn-up"></i></i></a></div>';
+
+				flag = 1;
+			}
+			document.querySelector('.programmation__content').innerHTML = html;
+			programmationActive()
+		})
+		.catch(console.error);
+
+		function tsvToObjects(tsv) {
+            let lines = tsv.split('\n');
+            let headers = lines[0].split('\t');
+            return lines.slice(1).map(line => {
+                let obj = {};
+                let values = line.split('\t');
+                headers.forEach((header, i) => {
+                    obj[header.trim()] = values[i].trim();
+                });
+                return obj;
+            });
+        }
+
+	const groupBy = (array, key) => {
+		return array.reduce((result, currentItem) => {
+			(result[currentItem[key]] = result[currentItem[key]] || []).push(currentItem);
+			return result;
+		}, {});
+	}
+
+	const programmationActive = () =>
+	{
+
 
 	const tabs = document.querySelectorAll('.tab')
 	const programations = document.querySelectorAll('.programmation__content__timetable')
@@ -1487,6 +1558,13 @@
 		})
 
 	})
+}
+
+
+</script>
+<script>
+
+	
 
 </script>
 

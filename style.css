@@ -145,6 +145,7 @@ button{max-width: fit-content;}
 .button--dark{ background-color: var(--dark-blue);}
 .button--dark:hover{ background-color: var(--dark-blue); color: white;}
 
+.button--light{width: fit-content; margin: 0 auto;}
 
 /* Navbar
 ------------------------------------------------------------------------- */
@@ -434,7 +435,7 @@ button{max-width: fit-content;}
 ------------------------------------------------------------------------- */	
 .programmation .cursor{display: none;}
 
-.programmation__tabs{display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 1rem; width: 75%;}
+.programmation__tabs{display: flex; justify-content: center; flex-wrap: wrap; gap: 1.5rem; margin: 0 auto 1rem auto; width: 60%; padding-top: 120px;}
 .programmation__tabs .tab{ background: rgba(255, 255, 255, 0.2); padding: 1rem 1.5rem; border-radius: 10px; cursor: pointer; transition: 0.4s; cursor: pointer;}
 .programmation__tabs .tab:hover{background: rgba(255, 255, 255, 0.4); ;}
 .programmation__tabs .tab--active{background: rgba(255, 255, 255, 0.8) !important; color: var(--dark-blue); }

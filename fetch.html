@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSV to HTML</title>
+</head>
+<body>
+    <div id="content"></div>
+
+    <script>
+        const url = './fetch.tsv';
+
+        fetch(url)
+            .then(response => response.text())
+            .then(data => {
+                let csvData = csvToObjects(data);
+                let groupedData = groupBy(csvData, 'giorno');
+                let html = '';
+                let flag = 0
+                for(let date in groupedData) {
+                    html += `<div class="programmation__content__timetable ${ flag === 0 ? 'programmation__content__timetable--active' : ''}" id="programmation-${date}">
+				                <h2 class="text-1 programmation__content__timetable__title">Programma del ${date} Luglio</h2>
+                                <div class="timeline" >`;
+
+                        for(let row of groupedData[date]) {
+                        html += `
+                        <div class="timeline__card">
+                            <div class="timeline__card__header">
+                                <div class="timeline__card__header__time">
+                                    <i class="fa-solid fa-clock"></i>${row.orario}
+                                </div>
+
+                                <div class="timeline__card__header__time">
+                                    <i class="fa-solid fa-map-location-dot"></i>${row.luogo}
+                                </div>
+
+                            </div>
+            
+                            <div class="timeline__card__text">
+                                <span class="subtitle text-3 color-3">${row.categoria}</span>
+                                <h2 class="text-2">${row.titolo}</h2>
+                                <p>${row.descrizione}</p>
+                            </div>
+            
+                        </div>
+                        `;
+                    }
+                    html += '</div></div>';
+
+                    flag = 1;
+                }
+                document.getElementById('programmation__content').innerHTML = html;
+            })
+            .catch(console.error);
+
+        const csvToObjects = (csv) => {
+            let lines = csv.split('\n');
+            let headers = lines[0].split(',');
+            return lines.slice(1).map(line => {
+                let obj = {};
+                let values = line.split('t');
+                headers.forEach((header, i) => {
+                    obj[header.trim()] = values[i].trim();
+                });
+                return obj;
+            });
+        }
+
+        const groupBy = (array, key) => {
+            return array.reduce((result, currentItem) => {
+                (result[currentItem[key]] = result[currentItem[key]] || []).push(currentItem);
+                return result;
+            }, {});
+        }
+
+
+    </script>
+</body>
+</html>

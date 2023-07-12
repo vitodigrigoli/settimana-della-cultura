@@ -167,14 +167,16 @@ button{max-width: fit-content;}
 .navbar__menu__list ol li a {color: white;  font-size: 2.5vw; opacity: 0.5; transition: opacity 0.4s; }
 .navbar__menu__list ol li a:hover{opacity: 1;}
 
-.navbar__menu__info{ font-size: 20px; width: 45%;}
+.navbar__menu__info{ font-size: 20px; width: 45%; display: flex; flex-direction: column; gap: 7vh;}
 
-.navbar__menu__info__social { font-size: 30px; }
+.navbar__menu__info__social { font-size: 30px; order: 2;}
 .navbar__menu__info__social a {color: white; margin-right: 20px; opacity: 0.5; transition: opacity 0.4s; }
 .navbar__menu__info__social a:hover{opacity: 1;}
+
+.navbar__menu__info__credits{order: 3;}
 .navbar__menu__info__credits a{color: var(--rose); font-weight: 500;}
 
-.navbar__menu__info__form {margin: 10vh 0; }
+.navbar__menu__info__form { order: 1;}
 .navbar__menu__info__form .form {margin-top: 20px; display: flex; align-items: flex-end; flex-wrap: wrap; ;}
 .navbar__menu__info__form .form input {border: none; background-color: transparent; font-size: 18px; border-bottom: 3px solid var(--mint); width: 100%; max-width: 300px;; border-radius: 5px;padding: 10px; margin-right: 20px; color: white; outline: none;}
 .navbar__menu__info__form .button {color: white; background-color: var(--mint); border-radius: 5px; outline: none; border: none; font-size: 18px; display: block; cursor: pointer; margin-top: 20px;; }
@@ -185,9 +187,10 @@ button{max-width: fit-content;}
 	.navbar__menu__list,
 	.navbar__menu__info{width: 100%;}
 	.navbar__menu > .container { align-items: flex-start;}
-	.navbar__menu__info__social { font-size: 30px; margin: 7vh 0; }
+	.navbar__menu__info__social { font-size: 30px; }
 	.navbar__menu__list ol li a{font-size: 18px;}
 	.navbar__menu__info__credits{margin-bottom: 30px;}
+	
 }
 
 
@@ -346,14 +349,19 @@ button{max-width: fit-content;}
 
 /* Form
 ------------------------------------------------------------------------- */
-.contact { padding: 10vh 0; }
+.contact { padding: calc(10vh + 100px) 0; }
 .contact .container { display: flex; justify-content: space-between; flex-wrap: wrap }
 
-.contact__text{text-shadow: 2px 2px 7px black; width: 40%; color: white; display: flex; align-items: center}
+.contact__text{ width: 40%; color: white; display: flex; align-items: center}
 
 .contact__form{ border: 1px solid rgba(255, 255, 255, 0.4); border-bottom: 1px solid rgba(255, 255, 255, 0.2); border-right: 1px solid rgba(255, 255, 255, 0.2); width: 50%; border-radius: 20px;background: rgba(255, 255, 255, 0.2); padding: 2rem; text-align: center; box-shadow: 20px 20px 20px rgb(4 7 37 / 30%); }
-.contact__form__input{ border: none;  border-radius: 20px; width: 100%; font-size: 18px; margin: 2vh 0; outline: none; padding: 1rem; font-family: 'Prompt', sans-serif; }
+.contact__form__input{ border: none;  border-radius: 10px; width: 100%; font-size: 18px; margin: 2vh 0; outline: none; padding: 1rem; font-family: 'Prompt', sans-serif; }
 .contact__form #hp{display: none;}
+
+.contact__form__checkbox{ padding: 1rem; display: flex; flex-direction: column; gap: 1rem; border-radius: 10px; border: 3px solid white; margin-top: 1rem; margin-bottom: 2rem;}
+.contact__form__checkbox legend{font-size: 18px;}
+.contact__form__checkbox__item{text-align: left;}
+.contact__form__checkbox__item input{ width: 16px; height: 16px;}
 
 @media (max-width: 1024px) {
 
@@ -452,7 +460,7 @@ button{max-width: fit-content;}
 
 .timeline__title{margin-left: 10%; margin-bottom: 5rem;}
 .timeline__card{ transition: 0.4s; margin: 0 0 15vh 10%; border: 1px solid rgba(255, 255, 255, 0.4); border-bottom: 1px solid rgba(255, 255, 255, 0.2); border-right: 1px solid rgba(255, 255, 255, 0.2); background-color:rgba(255, 255, 255, 0.4);  padding: 50px; border-radius: 2rem; background-color: rgba(255, 255, 255, 0.1);}
-
+.timeline__card:last-child{margin-bottom: 0;}
 .timeline__card__header{display: flex; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;}
 .timeline__card__header__time{  background: rgba(255, 255, 255, 0.2); padding: 0.5rem 1rem; border-radius: 10px;  }
 .timeline__card__header__time i{ margin-right: 0.5rem;}

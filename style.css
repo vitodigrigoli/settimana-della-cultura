@@ -396,6 +396,7 @@ button{max-width: fit-content;}
 
 .footer__images{margin: 2rem 0;}
 .footer__images .container{display: flex; justify-content: space-around; flex-wrap: wrap; align-items: center;}
+.footer__images__item {background: rgba(255, 255, 255, 0.2); padding: 1rem; border-radius: 10px;}
 .footer__images__item img{height: 4rem; object-fit: contain;}
 
 .subfooter > .container{ text-align: right; padding: 10vh 0 5vh;}
@@ -508,3 +509,22 @@ button{max-width: fit-content;}
 .gallery__media >  .photo:nth-child(10){ transform: rotate(7deg); top: 80%; left: 70%; } 
 .gallery__media >  .photo:nth-child(11){ transform: rotate(-7deg); top: 10%; left: 35%; } 
 .gallery__media >  .photo:nth-child(12){ transform: rotate(30deg); top: 25%; left: 75%; } 
+
+
+/* Scroll Micro-interaction
+--------------------------------------------------------------------------*/
+.scroll{opacity: 0; transition: 1s; color: white; position: absolute; bottom: 3%; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; z-index: 10; gap: 5px;}
+.scroll--visible{opacity: 1}
+.scroll__pointer{width: 10px; height: 10px; border-radius: 50%; background-color: white; animation: scroll_animation 2.5s cubic-bezier(0.63, 0.03, 0.24, 0.82) infinite; animation-delay: 5s; opacity: 0;}
+.scroll p{font-size: 16px; font-weight: 400; animation: scroll_text_animation 2.5s cubic-bezier(0.63, 0.03, 0.24, 0.82) infinite; letter-spacing: 2px; text-transform: uppercase; text-align: center;animation-delay: 5s; opacity: 0;}
+
+@keyframes scroll_animation {
+	0% {transform: translateY(0) scale(0); opacity: 0}
+	20% {transform: translateY(-20px) scale(1);opacity: 1}
+	100% {transform: translateY(20px) scale(0.5); }
+}
+
+@keyframes scroll_text_animation {
+	0%, 100% {opacity: 0}
+	20% {opacity: 1}
+}
